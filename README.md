@@ -18,7 +18,7 @@ This a bird that is similar to the internet sensation Flappy Bird. It is a mobil
 
 The technology used in this project are:
 
-HTML | CSS | JavaScript | React | TypeScript | Python | Nodejs
+HTML | CSS | JavaScript
 
 ## Installation
 
