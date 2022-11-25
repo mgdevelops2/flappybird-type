@@ -1,8 +1,8 @@
-# Title Here
+# Flappy-Birdo
 
 ## Description
 
-This ...
+This a bird that is similar to the internet sensation Flappy Bird. It is a mobile side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.
 
 ## Table of Contents
 
