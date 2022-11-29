@@ -1,16 +1,18 @@
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 var x = 300;
-var y = 350;
+var y = 200;
 let count = 0;
+let speed = 25;
+let t = Date.now();
 
 context.arc(x, y, 50, 0, 2 * Math.PI);
 context.fillStyle = "red";
 context.fill();
 
 function draw() {
-  // var timePassed = (Date.now() - t) / 1000;
-  // t = Date.now();
+  var timePassed = (Date.now() - t) / 1000;
+  t = Date.now();
 
   context.clearRect(0, 0, 600, 400);
 
@@ -23,6 +25,15 @@ function draw() {
   context.fillStyle = "white";
   context.fillText("Count: " + count, 20, 30);
 
+  if (y <= 350) {
+    speed += 50 * timePassed;
+    y += speed * timePassed;
+  }
+
+  if (y > 350) {
+    count = 0;
+  }
+
   window.requestAnimationFrame(draw);
 }
 
@@ -32,16 +43,19 @@ window.onload = function () {
   btn.onclick = function () {
     count += 1;
     y -= 25;
+    speed = 25;
     draw();
   };
   document.onkeydown = function () {
     count += 1;
     y -= 25;
+    speed = 25;
     draw();
   };
   document.ontouchstart = function () {
     count += 1;
     y -= 25;
+    speed = 25;
     draw();
   };
 };
